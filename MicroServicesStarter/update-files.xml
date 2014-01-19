@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<update-files>
+  <file search="schema.dbxml" to="" />
+  <file search="..\..\*.cs" to="" recursive="true" />
+  <file search="..\..\*.csproj" to="" recursive="true" />
+  <file search="..\..\*.config" to="" recursive="true" />
+  <file search="..\..\*.resx" to="" recursive="true" />
+  <folder remove="bin" />
+</update-files>

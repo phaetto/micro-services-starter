@@ -1,0 +1,23 @@
+﻿[
+	{
+		"Id":"Example-Debug-Test",
+		"ServiceName":"Example",
+		"DllPath":"Example.dll",
+		"ContextType":"Example.Context",
+		"AdminHost":"localhost",
+		"AdminPort": 11001,
+		"ApiKey":null,
+		"Session":null,
+	},
+
+	{
+		"Id":"Non-Existing-Service-Debug-Test",
+		"ServiceName":"Example2",
+		"DllPath":"Example2.dll",
+		"ContextType":"Example.Context",
+		"AdminHost":"localhost",
+		"AdminPort": 11001,
+		"ApiKey":null,
+		"Session":null,
+	}
+]
