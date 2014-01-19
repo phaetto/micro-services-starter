@@ -1,6 +1,7 @@
 [Bb]in/
 [Oo]bj/
 [Aa]dmin/
+[Uu]pdate/
 [Nn]uget/Packages/
 [Nn]uget/*.nupkg
 *.dbmdl
