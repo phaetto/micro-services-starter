@@ -3,6 +3,7 @@
     using System;
     using System.Diagnostics;
     using System.IO;
+    using System.Threading;
     using System.Windows.Forms;
     using MicroServicesStarter.Debug;
     using MicroServicesStarter.ServiceManagement;
@@ -39,6 +40,8 @@
 
                 return;
             }
+
+            Thread.Sleep(100);
 
             // Attach on the process after debugging. This ensures that the application stays on after we stop debugging
             new AdminSetupContext().Do(new AttachDebuggerToProcess(Process.GetCurrentProcess()));
