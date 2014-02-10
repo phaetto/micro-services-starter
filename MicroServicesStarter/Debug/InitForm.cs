@@ -89,6 +89,7 @@
                              .LogToUi("All services deployed and starting.");
 
             hasInitialized = true;
+            DoNotLetFormToBeAnnoying();
 
             Thread.Sleep(6000);
 
@@ -110,6 +111,7 @@
                              .LogToUi("Environment is ready. Close this form to shutdown.");
 
             hasInitialized = true;
+            DoNotLetFormToBeAnnoying();
         }
 
         private void debugCheckerBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
@@ -136,6 +138,18 @@
             }
 
             Close();
+        }
+
+        private void DoNotLetFormToBeAnnoying()
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action(DoNotLetFormToBeAnnoying));
+
+                return;
+            }
+
+            this.TopMost = false;
         }
     }
 }
