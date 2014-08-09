@@ -17,6 +17,8 @@
 
     public sealed class StartServices : IChainableAction<AdminSetupContext, AdminSetupContext>
     {
+        private const int ProcessDebugAttachRetries = 10;
+
         private string jsonFileWithStartingServices;
 
         private readonly string adminHost;
@@ -65,11 +67,33 @@
 
                         if (context.SetupType == SetupType.Debug)
                         {
-                            context.LogToUi(
-                                string.Format("Attaching to service {0}:{1}", workerData.ServiceName, workerData.Id));
+                            int tries = ProcessDebugAttachRetries;
 
-                            var serviceProcess = Process.GetProcessesByName("Services.Executioner").OrderByDescending(x => x.StartTime).First();
-                            context.Do(new AttachDebuggerToProcess(serviceProcess));
+                            while (true)
+                            {
+                                try
+                                {
+                                    var triesText = tries != ProcessDebugAttachRetries ? "(Try #" + (ProcessDebugAttachRetries - tries) + ")" : string.Empty;
+                                    context.LogToUi(
+                                        string.Format("Attaching to service {2}{0}:{1}", workerData.ServiceName, workerData.Id, triesText));
+
+                                    var serviceProcess = Process.GetProcessesByName("Services.Executioner").OrderByDescending(x => x.StartTime).First();
+                                    context.Do(new AttachDebuggerToProcess(serviceProcess));
+
+                                    break;
+                                }
+                                catch
+                                {
+                                    if (tries == 0)
+                                    {
+                                        throw;
+                                    }
+
+                                    tries--;
+
+                                    Thread.Sleep(1000);
+                                }
+                            }
                         }
 
                         successfulServices.Add(workerData.Id, true);
