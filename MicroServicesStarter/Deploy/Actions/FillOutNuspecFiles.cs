@@ -44,7 +44,7 @@
                         var id = packageNode.Attributes["id"].Value;
                         var version = packageNode.Attributes["version"].Value;
 
-                        var nugetPackageNode = packagesXmlDocument.SelectSingleNode(string.Format("/package/metadata/dependencies/dependency[@id='{0}']", id));
+                        var nugetPackageNode = nugetXmlDocument.SelectSingleNode(string.Format("/package/metadata/dependencies/dependency[@id='{0}']", id));
 
                         if (nugetPackageNode != null && nugetPackageNode.Attributes["version"].Value != version)
                         {
