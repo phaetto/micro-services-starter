@@ -185,7 +185,6 @@
     <None Include="admin-debug.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="app.config" />
     <None Include="admin-release.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
