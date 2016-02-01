@@ -15,55 +15,60 @@
     {
         private const string MicroServicesStarterFolder = @"..\..\";
         private const string AdminFolder = @"..\..\..\Admin\";
+        private const string DebugFlag = "--debug";
+        private const string UpdateFlag = "--update";
 
         [STAThread]
         static void Main(string[] args)
         {
             // This runs when the update script runs
-            if (args.Length > 0 && args[0] == "--update")
+            if (args.Length > 0 && args[0] == UpdateFlag)
             {
                 UpdateApplication();
 
                 return;
             }
 
-#if DEBUG
-            // This runs when we want to smart-debug and sniff if the debugger is attached
+            // This runs when we want to detach debugger and create another process
             if (args.Length == 0)
             {
                 Process.Start(new ProcessStartInfo()
                 {
                     FileName = "MicroServicesStarter.exe",
-                    Arguments = "--debug",
+                    Arguments = DebugFlag,
                     UseShellExecute = true,
                 });
 
                 return;
             }
 
+#if DEBUG
             Thread.Sleep(100);
 
-            // Attach on the process after debugging. This ensures that the application stays on after we stop debugging
-            var tries = 10;
-
-            while (true)
+            if (args[0] == DebugFlag)
             {
-                try
-                {
-                    new AdminSetupContext().Do(new AttachDebuggerToProcess(Process.GetCurrentProcess()));
+                // Attach on the process after debugging. This ensures that the application stays on after we stop debugging
+                var tries = 10;
 
-                    break;
-                }
-                catch
+                while (true)
                 {
-                    if (tries == 0)
+                    try
                     {
-                        throw;
+                        new AdminSetupContext().Do(new AttachDebuggerToProcess(Process.GetCurrentProcess()));
+
+                        break;
                     }
+                    catch
+                    {
+                        if (tries == 0)
+                        {
+                            throw;
+                        }
 
-                    tries--;
+                        tries--;
 
-                    Thread.Sleep(1000);
+                        Thread.Sleep(1000);
+                    }
                 }
             }
 #endif
