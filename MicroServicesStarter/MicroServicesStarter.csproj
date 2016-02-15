@@ -56,12 +56,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Chains, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Chains.0.10.0.0\lib\Chains.dll</HintPath>
+      <HintPath>..\packages\Chains.0.10.1.2\lib\Chains.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Services.Management.0.10.0.0\lib\Ionic.Zip.dll</HintPath>
+      <HintPath>..\packages\Services.Management.0.10.1.2\lib\Ionic.Zip.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
@@ -70,32 +70,32 @@
       <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Platform.Runtime, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Services.Packages.0.1.1.1\lib\Platform.Runtime.dll</HintPath>
+      <HintPath>..\packages\Services.Packages.0.1.2.2\lib\Platform.Runtime.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Services.Communication, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Services.Communication.0.10.0.0\lib\Services.Communication.dll</HintPath>
+      <HintPath>..\packages\Services.Communication.0.10.1.2\lib\Services.Communication.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Services.Management, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Services.Management.0.10.0.0\lib\Services.Management.dll</HintPath>
+      <HintPath>..\packages\Services.Management.0.10.1.2\lib\Services.Management.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Services.Packages, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Services.Packages.0.1.1.1\lib\Services.Packages.dll</HintPath>
+      <HintPath>..\packages\Services.Packages.0.1.2.2\lib\Services.Packages.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="SuperSocket.Common, Version=1.6.3.0, Culture=neutral, PublicKeyToken=6c80000676988ebb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Services.Management.0.10.0.0\lib\SuperSocket.Common.dll</HintPath>
+      <HintPath>..\packages\Services.Management.0.10.1.2\lib\SuperSocket.Common.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="SuperSocket.SocketBase, Version=1.6.3.0, Culture=neutral, PublicKeyToken=6c80000676988ebb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Services.Management.0.10.0.0\lib\SuperSocket.SocketBase.dll</HintPath>
+      <HintPath>..\packages\Services.Management.0.10.1.2\lib\SuperSocket.SocketBase.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="SuperSocket.SocketEngine, Version=1.6.3.0, Culture=neutral, PublicKeyToken=6c80000676988ebb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Services.Management.0.10.0.0\lib\SuperSocket.SocketEngine.dll</HintPath>
+      <HintPath>..\packages\Services.Management.0.10.1.2\lib\SuperSocket.SocketEngine.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

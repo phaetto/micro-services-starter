@@ -94,11 +94,11 @@
 
             preparedDeployContext.LogToUi("Deploying to update...")
                                  .DoIf(x => hasAnyUpdatePackage, new PrepareUpdateFiles())
-                                 .DoIfNotNull(new DeployToUpdate());
+                                 ?.Do(new DeployToUpdate());
 
             preparedDeployContext.DoIf(x => hasAnyNugetPackage, new PrepareNugetFiles())
-                                 .DoIfNotNull(new FillOutNuspecFiles())
-                                 .DoIfNotNull(new DeployToNuget());
+                                 ?.Do(new FillOutNuspecFiles())
+                                 ?.Do(new DeployToNuget());
 
             preparedDeployContext.Do(new SaveVersion())
                                  .LogToUi(
